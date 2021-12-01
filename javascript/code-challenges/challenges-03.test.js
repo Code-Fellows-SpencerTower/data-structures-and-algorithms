@@ -26,9 +26,10 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  numArray = arr.filter((val, idx) => {
-    return typeof (val) === num
-  })
+  const numArray = arr.filter((val, idx) => {
+    return !(isNaN(val));
+  });
+  return numArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
