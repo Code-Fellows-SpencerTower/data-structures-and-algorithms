@@ -96,7 +96,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-
+  const regex = (/world/);
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +109,11 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const regex = (/b[A-Z].*?\b/);
+  const capArr = str.match(regex);
+  console.log(str.match(regex));
+  return capArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
