@@ -45,7 +45,13 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let isInObj = false;
+  Object.values(obj).forEach(item => {
+    if (item === value) {
+      isInObj = true;
+    }
+  });
+  return isInObj;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +81,7 @@ const updateNumbers = (obj) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+ 
 Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 ------------------------------------------------------------------------------------------------ */
 
@@ -130,11 +136,11 @@ const getHouses = (arr) => {
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
-
+ 
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
-
+ 
 This function should take in an array of data and a character name and return a Boolean.
-
+ 
 For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
@@ -147,9 +153,9 @@ const hasChildrenValues = (arr, character) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
-
+ 
 Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4, but uses the data's entries instead of its values.
-
+ 
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
@@ -159,7 +165,7 @@ const hasChildrenEntries = (arr, character) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
-
+ 
 Write a function named totalCharacters that takes in an array and returns the number of characters in the array.
 ------------------------------------------------------------------------------------------------ */
 
@@ -169,11 +175,11 @@ const totalCharacters = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
-
+ 
 Write a function named houseSize that takes in the array of characters and creates an object for each house containing the name of the house and the number of members.
-
+ 
 All of these objects should be added to an array named "sizes". Return the "sizes" array from the function.
-
+ 
 For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ... ].
 ------------------------------------------------------------------------------------------------ */
 
@@ -185,17 +191,17 @@ const houseSize = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
-
+ 
 As fans are well aware, "When you play the game of thrones, you win or you die. There is no middle ground."
-
+ 
 We will assume that Alerie Tyrell is deceased. She missed her daughter's wedding. Twice.
-
+ 
 Write a function named houseSurvivors. You may modify your houseSize function from challenge 6 to use as the basis of this function.
-
+ 
 This function should create an object for each house containing the name of the house and the number of members. If the spouse is deceased, do not include him/her in the total number of family members.
-
+ 
 All of these objects should be added to an array named "survivors". Return the "survivors" array from the function.
-
+ 
 For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, ... ].
 ------------------------------------------------------------------------------------------------ */
 
@@ -209,13 +215,13 @@ const houseSurvivors = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
-
+ 
 All the code below will verify that your functions are working to solve the challenges.
-
+ 
 DO NOT CHANGE any of the below code.
-
+ 
 Run your tests from the console: jest challenges-06.test.js
-
+ 
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
