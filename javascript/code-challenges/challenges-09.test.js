@@ -75,15 +75,11 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   const arr = [];
-  // const keys = Object.keys(obj);
   const keys = Object.keys(obj);
   const vals = Object.values(obj);
   for (let i = 0; i < keys.length; i += 1) {
     arr.push(`${keys[i]}: ${vals[i]}`);
   }
-  // Object.keys(obj).forEach((key, idx) => {
-  //   arr.push(`${key}: ${key[idx]}`);
-  // });
   return arr;
 };
 
@@ -140,7 +136,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(char => {
+    houses.push(char.house);
+  });
   return houses;
 };
 
