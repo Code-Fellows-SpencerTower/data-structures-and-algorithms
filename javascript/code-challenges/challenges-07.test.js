@@ -124,6 +124,15 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
+  const ingrArr = [];
+  const space = ' ';
+  for (let i = 0; i < recipe.ingredients.length; i += 1) {
+    const str = recipe.ingredients[i];
+    const firstSpace = str.indexOf(space);
+    const secSpace = str.indexOf(space, firstSpace + 1);
+    ingrArr.push(str.slice(secSpace + 1, str.length));
+  }
+  return ingrArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
