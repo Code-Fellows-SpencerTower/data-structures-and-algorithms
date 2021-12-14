@@ -109,10 +109,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const regex = (/^[A-Z]*$/);
+  const regex = (/\b[A-Z]\w*/g);
+  //We only want to Return the Words that begin With a capital Letter
   const capArr = str.match(regex);
-  console.log(str.match(regex));
-  return capArr;
+  if (capArr) {
+    return capArr;
+  } else {
+    return [];
+  }
 
 };
 
@@ -242,7 +246,7 @@ describe('Testing challenge 4', () => {
   test('It should return false if the input does not contain the word school', () => {
     expect(containsWorld('hello everyone')).toBe(false);
   });
-})
+});
 
 describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
