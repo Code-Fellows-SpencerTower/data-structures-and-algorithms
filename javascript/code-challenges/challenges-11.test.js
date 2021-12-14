@@ -39,7 +39,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-
+  const flatInput = input.flat();
+  const targetCount = flatInput.reduce((acc, val) => {
+    if (val === target) {
+      acc += 1;
+    }
+    return acc;
+  }, 0);
+  return targetCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
