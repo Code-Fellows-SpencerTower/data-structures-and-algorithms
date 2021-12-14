@@ -74,7 +74,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  const arr = [];
+  const keys = Object.keys(obj);
+  const vals = Object.values(obj);
+  for (let i = 0; i < keys.length; i += 1) {
+    arr.push(`${keys[i]}: ${vals[i]}`);
+  }
+  return arr;
 };
 
 
@@ -130,7 +136,9 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(char => {
+    houses.push(char.house);
+  });
   return houses;
 };
 
@@ -147,8 +155,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  let hasChildren = false;
+  Object.keys(arr).forEach(key => {
+    if (arr[key].name === character && arr[key].children) {
+      hasChildren = true;
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
