@@ -68,7 +68,10 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  // const regex = /[a-zA-z]+\d+/g;
+  const regex1 = /\w+@[a-zA-z]+\.[a-z]{3}\b/g;
+  // const regex2 = /\w+\.\w+@[a-zA-z]+\.[a-z]{3}\b/g;
+  return regex1.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
