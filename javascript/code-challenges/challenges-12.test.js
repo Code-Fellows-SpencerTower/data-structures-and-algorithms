@@ -34,7 +34,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  const regex = /^[a-zA-z]{5,10}$/;
+  return regex.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +47,8 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  const regex = /[a-zA-z]+\d+/g;
+  return regex.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
