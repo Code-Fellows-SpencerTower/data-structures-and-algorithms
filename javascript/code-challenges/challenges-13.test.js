@@ -57,10 +57,18 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
-
+// const nums = ['(123) 456-7890', '(222) 222-2222'];
 const standardizePhoneNumbers = (arr) => {
-  
+  const regex = / |\(|\)|-/g;
+  const newArr = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    const newStr = arr[i].replace(regex, '');
+    newArr.push(newStr);
+  }
+  return newArr;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
