@@ -95,7 +95,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let smileCount = 0;
+  arr.forEach(element => {
+    if (element.includes(':)')) {
+      smileCount += 1;
+    }
+  });
+  return (smileCount === arr.length);
 };
 
 /* ------------------------------------------------------------------------------------------------
