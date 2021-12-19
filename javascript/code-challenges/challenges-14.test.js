@@ -30,7 +30,11 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach(str => {
+    newArr.push(str.charAt(0).toUpperCase() + str.slice(1));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
