@@ -82,11 +82,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   const newArr = [];
+
   for (let i = 0; i < input.length; i += 1) {
-    if (!input[i] % 5) {
-      element
-    }
+    let subArr = [];
+    input[i].forEach(element => {
+      if ((!isNaN(element) && (element % 5 === 0))) {
+        subArr.push(Math.pow(2, element));
+      }
+    });
+    newArr.push(subArr);
   }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +158,15 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let charStr = '';
+  data.forEach((char) => {
+    if (char.gender === 'male' || char.gender === 'female') {
+      charStr += `${char.name} and `;
+    }
+  });
+  charStr = charStr.slice(0, -5);
+  console.log(charStr)
+  return charStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
