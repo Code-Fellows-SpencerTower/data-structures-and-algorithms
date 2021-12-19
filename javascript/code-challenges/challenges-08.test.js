@@ -117,7 +117,6 @@ const isCapitalized = (str) => {
   } else {
     return [];
   }
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,8 +126,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const cityArr = [];
+  const regex = (/^[A-J]/);
+  arr.forEach(element => {
+    regex.test(element) && cityArr.push(element);
+  });
+  return cityArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -219,8 +224,8 @@ describe('Testing challenge 2', () => {
   });
   test('It should return false if the input does not contain a w', () => {
     expect(containsW('hello everyone')).toBe(false);
-  })
-})
+  });
+});
 
 describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
