@@ -165,7 +165,6 @@ let findMaleAndFemale = (data) => {
     }
   });
   charStr = charStr.slice(0, -5);
-  console.log(charStr)
   return charStr;
 };
 
@@ -176,7 +175,9 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  data.sort((charA, charB) => {
+
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
