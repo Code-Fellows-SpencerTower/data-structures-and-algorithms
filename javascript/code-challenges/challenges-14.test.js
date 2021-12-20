@@ -141,7 +141,13 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  console.log('arr[0][property]: ', arr[0][property]);
+  const newArr = arr.sort((a, b) => {
+    console.log(b[property]);
+    console.log(a[property]);
+    b[property].toString() - a[property].toString();
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,7 +163,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  const regex = (/^https:\/\//);
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -180,7 +187,30 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const row1 = board[0].join('');
+  const col1 = board[0][0] + board[1][0] + board[2][0];
+  const row2 = board[1].join('');
+  const col2 = board[0][1] + board[1][1] + board[2][1];
+  const row3 = board[2].join('');
+  const col3 = board[0][2] + board[1][2] + board[2][2];
+  const diag1 = board[0][0] + board[1][1] + board[2][2];
+  const diag2 = board[0][2] + board[1][1] + board[2][0];
+
+  return helpCheck(row1, col1, row2, col2, row3, col3, diag1, diag2);
+
+};
+
+const helpCheck = (row1, col1, row2, col2, row3, col3, diag1, diag2) => {
+  const testArr = [row1, col1, row2, col2, row3, col3, diag1, diag2];
+  const regexX = (/XXX/);
+  const regexO = (/OOO/);
+  let threeInARow = false;
+  for (let i = 0; i < testArr.length; i += 1) {
+    if (regexX.test(testArr[i]) || regexO.test(testArr[i])) {
+      threeInARow = true;
+    }
+  }
+  return threeInARow;
 };
 
 /* ------------------------------------------------------------------------------------------------
