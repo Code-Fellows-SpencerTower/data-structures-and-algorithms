@@ -145,7 +145,7 @@ const sortBy = (property, arr) => {
   const newArr = arr.sort((a, b) => {
     console.log(b[property]);
     console.log(a[property]);
-    b[property].toString() - a[property].toString();
+    b[property] - a[property];
   });
   return newArr;
 };
