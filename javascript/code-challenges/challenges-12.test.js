@@ -96,7 +96,14 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  // regex expression
+  // accepts 9 digits
+  // opening paren acceptable as first char
+  // closing paren, dash or space acceptable as 4th char / after 3rd digit
+  // space or dash acceptable between 6th and 7th digits
+  // return boolean
+  const regex = /^((\(\d{3}\))?|(\d{1,3}))\s?-?\d{3}-?\s?\d{4}$/g;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------

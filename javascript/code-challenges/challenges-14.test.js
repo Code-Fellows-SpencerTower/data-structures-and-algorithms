@@ -141,13 +141,6 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  console.log('arr[0][property]: ', arr[0][property]);
-  const newArr = arr.sort((a, b) => {
-    console.log(b[property]);
-    console.log(a[property]);
-    b[property] - a[property];
-  });
-  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
