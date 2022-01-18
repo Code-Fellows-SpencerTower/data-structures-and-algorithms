@@ -19,15 +19,18 @@ class LinkedList {
     if (this.head === null) {
       this.head = node;
       return;
+    } else {
+      node.next = this.head;
+      this.head = node;
     }
 
-    // traversal of a linked list
-    let currentNode = this.head;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    }
+    // // traversal of a linked list
+    // let currentNode = this.head;
+    // while (currentNode.next) {
+    //   currentNode = currentNode.next;
+    // }
 
-    currentNode.next = node;
+    // currentNode.next = node;
   }
 
   includes(value) {

@@ -16,18 +16,10 @@ class LinkedList {
   insert(value) {
     // empty linked list {head: null}
     let node = new Node(value);
-    if (this.head === null) {
-      this.head = node;
-      return;
-    }
-
-    // traversal of a linked list
-    let currentNode = this.head;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    }
-
-    currentNode.next = node;
+    // shift head to next node
+    node.next = this.head;
+    // set head to inserted node
+    this.head = node;
   }
 
   includes(value) {
@@ -50,9 +42,41 @@ class LinkedList {
     let listString = String(this.value);
     if (this.next) {
       // "{ a } -> { b } -> { c } -> NULL"
-      listString = listString + " -> " + String(this.next);
+      listString = listString + ' -> ' + String(this.next);
     }
     return listString;
+  }
+
+  // append
+  // arguments: new value
+  // adds a new node with the given value to the end of the list
+
+  append(value) {
+    let
+  }
+
+  // insert before
+  // arguments: value, new value
+  // adds a new node with the given new value immediately before the first node that has the value specified
+
+  insertBefore(value, newValue) {
+    let currentNode = this.head;
+    let node = new Node(newValue);
+    // iterate through linked list
+    while (currentNode.next) {
+      // if current nodes value equals value, return true
+      if (currentNode.value === value) {
+        return true;
+      }
+      // move to next node
+      currentNode = currentNode.next;
+    }
+    // if value not found in list, return false
+    return false;
+  }
+
+  insertAfter(value, newValue) {
+
   }
 }
 
