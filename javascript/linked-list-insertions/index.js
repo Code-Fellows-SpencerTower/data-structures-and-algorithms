@@ -65,18 +65,20 @@ class LinkedList {
     // iterate through linked list
     while (currentNode.next) {
       // if current nodes value equals value, return true
-      if (currentNode.value === value) {
-        return true;
+      if (currentNode.next.value === value) {
+        currentNode = node;
+        return;
       }
       // move to next node
       currentNode = currentNode.next;
     }
     // if value not found in list, return false
-    return false;
+    return 'value not found';
+
   }
 
   insertAfter(value, newValue) {
-
+    
   }
 }
 
