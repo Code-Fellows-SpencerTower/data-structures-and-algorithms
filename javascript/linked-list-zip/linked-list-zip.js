@@ -50,7 +50,6 @@ class LinkedList {
   // append
   // arguments: new value
   // adds a new node with the given value to the end of the list
-
   append(newValue) {
     // create new node with value
     let newNode = new Node(newValue);
@@ -73,7 +72,6 @@ class LinkedList {
   // insert before
   // arguments: value, new value
   // adds a new node with the given new value immediately before the first node that has the value specified
-
   insertBefore(value, newValue) {
 
     let node = new Node(newValue);
@@ -111,6 +109,27 @@ class LinkedList {
     }
     // if value not found in list, return false
     return 'value not found';
+  }
+}
+
+function zipLists(ll1, ll2) {
+  // point to first node in list
+  let currentNodeLL1 = ll1.head;
+  let currentNodeLL2 = ll2.head;
+
+  // set counter
+  let counter = 1;
+  while (currentNode) {
+    if (counter % 2 === 0) {
+      currentNode.next = ll2
+    }
+    // check if current node is last in list by checking if next value is null
+    // if last in list, append newNode
+    if (currentNode.next) {
+      currentNode.next = newNode;
+    }
+    // move to next node in list
+    currentNode = currentNode.next;
   }
 }
 

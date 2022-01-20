@@ -53,23 +53,11 @@ class LinkedList {
     let listString = String(this.value);
     if (this.next) {
       // "{ a } -> { b } -> { c } -> NULL"
-      listString = listString + " -> " + String(this.next);
+      listString = listString + ' -> ' + String(this.next);
     }
     return listString;
   }
 }
 
-
-let list = new LinkedList();
-// let node2 = new Node(2);
-// let node3 = new Node(3);
-// let node4 = new Node(4);
-
-// list.head = node;
-// list.head.next = node2;
-// list.head.next.next = node3;
-// list.head.next.next.next = node4;
-
 module.exports = LinkedList;
-// JSON.stringify() takes object and converts it to a string
 

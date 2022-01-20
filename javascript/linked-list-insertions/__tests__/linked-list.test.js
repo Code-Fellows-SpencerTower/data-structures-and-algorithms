@@ -4,7 +4,12 @@
 const LinkedList = require('../index');
 
 describe('Linked List', () => {
-  it('works', () => {
+  it('Should create a new node when', () => {
     expect(true).toBeTruthy();
   });
+
+
+
+
 });
+
