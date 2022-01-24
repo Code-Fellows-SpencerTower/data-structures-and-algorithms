@@ -1,36 +1,22 @@
 'use strict';
 
 class Node {
-  constructor(value) {
+  constructor(value, next = null) {
     this.value = value;
-    this.next = null;
+    this.next = next;
   }
 }
 
 class LinkedList {
   constructor() {
     this.head = null;
+    this.size = 0;
   }
 
   // take in a value and add it to our linked list
   insert(value) {
-    // empty linked list {head: null}
-    let node = new Node(value);
-    if (this.head === null) {
-      this.head = node;
-      return;
-    } else {
-      node.next = this.head;
-      this.head = node;
-    }
-
-    // // traversal of a linked list
-    // let currentNode = this.head;
-    // while (currentNode.next) {
-    //   currentNode = currentNode.next;
-    // }
-
-    // currentNode.next = node;
+    this.head = new Node(value, this.head);
+    this.size += 1;
   }
 
   includes(value) {
@@ -58,6 +44,13 @@ class LinkedList {
     return listString;
   }
 }
+
+let ll = new LinkedList();
+ll.insert(100);
+
+console.log(ll.head.data);
+
+
 
 module.exports = LinkedList;
 

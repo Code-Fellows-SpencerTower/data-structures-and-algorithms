@@ -112,7 +112,7 @@ class LinkedList {
   }
 }
 
-function zipLists(ll1, ll2) {
+zipLists(ll1, ll2) {
   // point to first node in list
   let currentNodeLL1 = ll1.head;
   let currentNodeLL2 = ll2.head;
