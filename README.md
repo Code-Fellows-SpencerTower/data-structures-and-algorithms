@@ -23,6 +23,12 @@ To run your tests
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
 ### Table of Contents 401
+
 - [Code Challenge 01 - Array Reverse](javascript/array-reverse/README.md)
 - [Code Challenge 02 - Array Insert Shift](javascript/array-insert-shift/README.md)
 - [Code Challenge 03 - Array Binary Search](javascript/array-binary-search/README.md)
+- [Code Challenge - Linked Lists](javascript/linked-lists/README.md)
+- [Code Challenge - Linked List Insertions](javascript/linked-list-insertions/README.md)
+- [Code Challenge - Linked List kth](javascript/linked-list-kth/README.md)
+- [Code Challenge - Linked List Zip](javascript/linked-list-zip/README.md)
+- [Code Challenge - Stacks and Queues](javascript/stacks-and-queues/README.md)

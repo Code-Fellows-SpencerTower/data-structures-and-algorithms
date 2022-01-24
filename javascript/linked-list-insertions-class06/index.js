@@ -37,7 +37,7 @@ class LinkedList {
     return false;
   }
 
-  // adapted from: https://stackoverflow.com/questions/46865448/tostring-method-on-linked-list-implementation-not-working-in-js
+
   toString() {
     let listString = String(this.value);
     if (this.next) {
@@ -46,6 +46,7 @@ class LinkedList {
     }
     return listString;
   }
+  // adapted from: https://stackoverflow.com/questions/46865448/tostring-method-on-linked-list-implementation-not-working-in-js
 
   // append
   // arguments: new value
@@ -53,7 +54,7 @@ class LinkedList {
 
   append(newValue) {
     // create new node with value
-    let newNode = new Node(newValue);
+    let node = new Node(newValue);
 
     // point to first node in list
     let currentNode = this.head;
@@ -63,11 +64,13 @@ class LinkedList {
       // check if current node is last in list by checking if next value is null
       // if last in list, append newNode
       if (currentNode.next.value === null) {
-        currentNode.next = newNode;
+        currentNode = currentNode.next = node;
       }
       // move to next node in list
       currentNode = currentNode.next;
     }
+    currentNode.next = node;
+    // this.size += 1;
   }
 
   // insert before
@@ -113,6 +116,7 @@ class LinkedList {
     return 'value not found';
   }
 }
+
 
 
 module.exports = LinkedList;
