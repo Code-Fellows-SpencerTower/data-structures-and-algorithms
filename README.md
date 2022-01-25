@@ -31,4 +31,5 @@ To run your tests
 - [Code Challenge - Linked List Insertions](javascript/linked-list-insertions/README.md)
 - [Code Challenge - Linked List kth](javascript/linked-list-kth/README.md)
 - [Code Challenge - Linked List Zip](javascript/linked-list-zip/README.md)
-- [Code Challenge - Stacks and Queues](javascript/stacks-and-queues/README.md)
+- [Code Challenge - Stacks and Queues](javascript/stacks-and-queues-class10/README.md)
+- [Code Challenge - Stacks and Queue Pseudo](javascript/stacks-queue-pseudo-class11/README.md)
