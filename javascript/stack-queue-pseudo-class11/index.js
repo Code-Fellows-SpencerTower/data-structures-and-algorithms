@@ -60,8 +60,6 @@ class Stack {
 class PseudoQueue {
   // 2 stack instances to create and manage the queue
   constructor() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
   }
 
   // adds nodes to queue
