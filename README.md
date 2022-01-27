@@ -34,3 +34,4 @@ To run your tests
 - [Code Challenge - Stacks and Queues](javascript/stacks-and-queues-class10/README.md)
 - [Code Challenge - Stacks and Queue Pseudo](javascript/stacks-queue-pseudo-class11/README.md)
 - [Code Challenge - Stack Queue Animal Shelter](javascript/stack-queue-pseudo-class11/README.md)
+- [Code Challenge - Stack Queue Brackets](javascript/stack-queue-brackets/README.md)
