@@ -18,9 +18,7 @@ Practice implementing trees
 
 ## Approach & Efficiency
 
-
 Big O:
-
 
 ## API
 
@@ -45,4 +43,4 @@ Big O:
 
 ## Resources
 
-- JavaScript Algorithms and Data Structures Masterclass
+- JavaScript Algorithms and Data Structures Masterclass by Colt Steele
