@@ -58,7 +58,7 @@ describe('Testing BinarySearchTree methods', () => {
     tree.add(2);
     tree.add(4);
     tree.add(10);
-    expect(tree.preOrder()).toEqual('[5, 3, 2, 4, 10]');
+    expect(tree.preOrder()).toEqual([5, 3, 2, 4, 10]);
   });
 
   it('Should successfully return a collection from an inorder traversal', () => {
@@ -68,7 +68,7 @@ describe('Testing BinarySearchTree methods', () => {
     tree.add(2);
     tree.add(4);
     tree.add(10);
-    expect(tree.inOrder()).toEqual('[2, 3, 4, 5, 10]');
+    expect(tree.inOrder()).toEqual([2, 3, 4, 5, 10]);
   });
 
   it('Should successfully return a collection from a postorder traversal', () => {
@@ -78,6 +78,6 @@ describe('Testing BinarySearchTree methods', () => {
     tree.add(2);
     tree.add(4);
     tree.add(10);
-    expect(tree.postOrder()).toEqual('[2, 4, 3, 10, 5]');
+    expect(tree.postOrder()).toEqual([2, 4, 3, 10, 5]);
   });
 });

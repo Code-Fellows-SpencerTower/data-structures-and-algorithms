@@ -1,5 +1,6 @@
 'use strict';
 
+let treeify = require('treeify');
 
 class Node {
   constructor(value) {
@@ -8,6 +9,46 @@ class Node {
     this.right = null;
   }
 }
+
+// class Queue {
+//   constructor() {
+//     this.front = null;
+//     this.back = null;
+//   }
+
+//   // adds nodes to queue
+//   enqueue(value) {
+//     let node = new Node(value);
+
+//     if (this.front === null) {
+//       this.front = node;
+//       this.back = node;
+//       return;
+//     } else {
+//       let temp = this.back;
+//       this.back = node;
+//       temp.next = node;
+//       return;
+//     }
+//   }
+
+//   // remove nodes from queue
+//   dequeue() {
+
+//     try {
+//       if (!this.front) {
+//         this.back = null;
+//         throw 'Queue is already empty';
+//       }
+//       let nodeToRemove = this.front;
+//       this.front = nodeToRemove.next;
+//       nodeToRemove.next = null; // removes node
+//       return;
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+// }
 
 class BinaryTree {
   constructor() {
@@ -31,6 +72,7 @@ class BinaryTree {
   }
 
   // traverse entire left side, then right side
+  // returns values smallest to largest
   inOrder() {
     let values = [];
 
@@ -122,20 +164,42 @@ class BinarySearchTree extends BinaryTree {
   }
 }
 
+function breadthFirst(tree) {
+  let current = tree.root;
+  let values = [];
+  let queue = [];
+  queue.push(current);
+  console.log('queue before while loop: ', queue);
+  while (queue.length >= 1) {
+    current = queue.shift();
+    // remove first element from queue
+    values.push(current.value); // add element to values list
+    if (current.left) {
+      queue.push(current.left);
+    }
+    if (current.right) {
+      queue.push(current.right);
+    }
+  }
+  return values;
+}
 
-// let tree = new BinarySearchTree();
-// // tree.root = new Node(10);
-// console.log('Before Insert: ', tree);
 
-// tree.add(24);
-// tree.add(3);
-// tree.add(30);
-// tree.add(13);
-// console.log('After add ', tree);
-// console.log('After Insert: ', tree);
-// // console.log('Contains 24? ', tree.contains(24));
-// // console.log('Contains 3? ', tree.contains(3));
-// // console.log('tree.preorder()', tree.preOrder());
+let tree = new BinarySearchTree();
+// tree.root = new Node(10);
+console.log('Before Insert: ', tree);
+
+console.log('Before add: ', tree);
+tree.add(24);
+tree.add(3);
+tree.add(30);
+tree.add(13);
+
+let treeifyTree = treeify.asTree(tree, true);
+console.log(treeifyTree);
+console.log('After add: ', tree);
+console.log('breadth first array: ', breadthFirst(tree));
 
 
-module.exports = { BinaryTree, BinarySearchTree };
+
+module.exports = { BinarySearchTree, breadthFirst };
