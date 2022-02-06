@@ -112,10 +112,40 @@ class LinkedList {
     // if value not found in list, return false
     return 'value not found';
   }
+
+  kth(k) {
+    let listLength = 0;
+    let current = this.head;
+    let targetPos;
+    let targetVal;
+
+    // find length of linked list
+    while (current.next) {
+      listLength += 1;
+      if (current.next) {
+        current = current.next;
+      }
+    }
+
+    // check if k is greater than list length, throw error
+    if (k > listLength) {
+      throw 'Position provided is greater than the lenght of the list';
+    } else if (k < 0) {
+      throw 'k must be a positive integer';
+    }
+    targetPos = listLength - k;
+    current = this.head;
+
+    for (let i = 0; i < targetPos; i += 1) {
+      current = current.next;
+    }
+    targetVal = current.value;
+    return targetVal;
+  }
 }
 
 
+
 module.exports = LinkedList;
-// JSON.stringify() takes object and converts it to a string
 
 

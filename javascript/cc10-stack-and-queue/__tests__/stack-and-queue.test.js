@@ -53,8 +53,8 @@ describe('Testing Stack methods', () => {
 
   it('Should raise an exeption when pop or peek are called on an empty stack', () => {
     let stack = new Stack();
-    expect(stack.pop()).toThrow('Stack is empty');
-    expect(stack.peek()).toThrow('Stack is empty');
+    expect(() => stack.pop()).toThrow('Stack is empty');
+    expect(() => stack.peek()).toThrow('Stack is empty');
   });
 });
 
@@ -113,8 +113,8 @@ describe('Testing queue methods', () => {
 
   it('Should raise and exeption if dequeue or peek are called on an empty queue', () => {
     let queue = new Queue();
-    expect(queue.dequeue()).toThrow('Queue is already empty');
-    expect(queue.peek()).toThrow('Queue is already empty');
+    expect(() => queue.dequeue()).toThrow('Queue is already empty');
+    expect(() => queue.peek()).toThrow('Queue is already empty');
     expect(queue.isEmpty()).toEqual(true);
   });
 
