@@ -46,7 +46,6 @@ class Stack {
   peek() {
     try {
       if (this.top === null) {
-
         throw 'Stack is already empty';
       } else {
         return this.top.value;
@@ -142,21 +141,21 @@ class Queue {
 // console.log(stack.pop()); // removes top node, returns value of top node
 // console.log(stack);
 
-let stack2 = new Stack();
+// let stack2 = new Stack();
 
-console.log('STACK2: ', stack2.value);
+// console.log('STACK2: ', stack2.value);
 
-let queue = new Queue();
+// let queue = new Queue();
 
-queue.enqueue(5);
-queue.enqueue(10);
-console.log('QUEUE:', queue);
-console.log('QUEUE peek:', queue.peek());
-queue.dequeue();
-console.log('QUEUE after dequeue:', queue);
+// queue.enqueue(5);
+// queue.enqueue(10);
+// console.log('QUEUE:', queue);
+// console.log('QUEUE peek:', queue.peek());
+// queue.dequeue();
+// console.log('QUEUE after dequeue:', queue);
 
-let queue2 = new Queue();
-console.log('QUEUE2 front.value:', queue2.front);
-console.log('QUEUE2 isEmpty:', queue2.isEmpty());
+// let queue2 = new Queue();
+// console.log('QUEUE2 front.value:', queue2.front);
+// console.log('QUEUE2 isEmpty:', queue2.isEmpty());
 
 module.exports = { Stack, Queue };
