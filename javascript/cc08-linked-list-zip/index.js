@@ -52,21 +52,29 @@ class LinkedList {
   // adds a new node with the given value to the end of the list
   append(newValue) {
     // create new node with value
-    let newNode = new Node(newValue);
-
+    let node = new Node(newValue);
     // point to first node in list
-    let currentNode = this.head;
+    let current = this.head;
+
+    if (this.head === null) {
+      this.head = node;
+      return this;
+    }
     // iterate through linked list
     // look for end of list - find null value in list
-    while (currentNode) {
+    let traversing = true;
+    while (traversing) {
       // check if current node is last in list by checking if next value is null
       // if last in list, append newNode
-      if (currentNode.next.value === null) {
-        currentNode.next = newNode;
+      if (!current.next) {
+        current.next = node;
+        console.log('Added new node');
+        break;
       }
       // move to next node in list
-      currentNode = currentNode.next;
+      current = current.next;
     }
+    return this;
   }
 
   // insert before
@@ -112,29 +120,50 @@ class LinkedList {
   }
 }
 
-zipLists(ll1, ll2) {
+function zipLinkedLists(ll1, ll2) {
   // point to first node in list
-  let currentNodeLL1 = ll1.head;
-  let currentNodeLL2 = ll2.head;
+  let current1 = ll1.head;
+  let current2 = ll2.head;
+  let zippedll = new LinkedList;
 
-  // set counter
-  let counter = 1;
-  while (currentNode) {
+  // start at next
+
+  let counter = 0;
+  while (current1 || current2) {
     if (counter % 2 === 0) {
-      currentNode.next = ll2
+      zippedll.append(current1.value);
+      console.log('Appended: ', current1.value);
+      current1 = current1.next;
+    } else {
+      zippedll.append(current2.value);
+      console.log('Appended: ', current2.value);
+      current2 = current2.next;
     }
-    // check if current node is last in list by checking if next value is null
-    // if last in list, append newNode
-    if (currentNode.next) {
-      currentNode.next = newNode;
-    }
-    // move to next node in list
-    currentNode = currentNode.next;
+    counter += 1;
   }
+  return zippedll;
 }
 
 
-module.exports = LinkedList;
+
+
+let ll = new LinkedList();
+ll.append(100);
+ll.append(300);
+ll.append(500);
+console.log('ll: ', ll);
+
+
+let ll2 = new LinkedList();
+ll2.append(200);
+ll2.append(400);
+ll2.append(600);
+console.log('ll2: ', ll2);
+
+let zippedList = zipLinkedLists(ll, ll2);
+console.log('zippedList: ', zippedList);
+
+module.exports = { LinkedList, zipLinkedLists };
 // JSON.stringify() takes object and converts it to a string
 
 
