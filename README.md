@@ -38,4 +38,5 @@ To run your tests
 - [Code Challenge - Stack Queue Brackets](javascript/stack-queue-brackets-class13/README.md)
 - [Code Challenge - Binary Search Trees](javascript/trees-class15.md)
 - [Code Challenge - Trees Max](javascript/tree-max-class16.md)
-- [Code Challenge - Tree Breadth First](javascript/tree-breadth-first-class17.md)
+- [Code Challenge - Tree Breadth First](javascript/tree-breadth-first-class17/README.md)
+- [Code Challenge - class 26 - Insertion Sort](javascript/cc26-insertionsort/BLOG.md)
