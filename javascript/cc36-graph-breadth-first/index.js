@@ -51,30 +51,10 @@ class Graph {
     return Array.from(this.adjacencyList.keys()).length >= 1 ? Array.from(this.adjacencyList.keys()) : null;
   }
 
-  getEdgeWeight(vertex1, vertex2) {
-    let vertex1Edges = this.getNeighbors(vertex1);
-    for (let i = 0; i < vertex1Edges.length; i++) {
-      if (vertex1Edges[i][0] === vertex2.value) {
-        return vertex1Edges[i][1];
-      }
-    }
+  breadthFirst() {
+
   }
 }
-
-const graph = new Graph();
-let kiwi = graph.addVertex('kiwi');
-let apple = graph.addVertex('apple');
-let banana = graph.addVertex('banana');
-let grape = graph.addVertex('grape');
-graph.addEdge(kiwi, apple);
-graph.addEdge(kiwi, banana, 30);
-graph.addEdge(kiwi, grape, 40);
-// console.log("GRAPH", graph.getVertecies());
-// console.log('EDGE WEIGHT', graph.getEdgeWeight(kiwi, banana));
-// console.log('EDGE WEIGHT KIWI GRAPE', graph.getEdgeWeight(kiwi, grape));
-// console.log('EDGE WEIGHT KIWI APPLE', graph.getEdgeWeight(kiwi, apple));
-console.log('KIWI NEIGHBORS', graph.getNeighbors(kiwi));
-
 
 
 module.exports = Graph;
