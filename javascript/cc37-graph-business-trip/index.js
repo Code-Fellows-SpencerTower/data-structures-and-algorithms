@@ -24,8 +24,8 @@ class Graph {
   addEdge(vertex1, vertex2, weight = null) {
     // get vertex1 and then push vertex2 to its array
     try {
-      this.adjacencyList.get(vertex1).push([vertex2.value, weight]);
-      this.adjacencyList.get(vertex2).push([vertex1.value, weight]);
+      this.adjacencyList.get(vertex1).push([vertex2, weight]);
+      this.adjacencyList.get(vertex2).push([vertex1, weight]);
     } catch (err) {
       console.log(err);
     }
@@ -52,11 +52,16 @@ class Graph {
   }
   getEdgeWeight(vertex1, vertex2) {
     let vertex1Edges = this.getNeighbors(vertex1);
-    console.log('VERTEX 1 EDGES', vertex1Edges);
+    console.log('VERTEX 1', vertex1);
+    console.log('VERTEX 1 NEIGHBORS', vertex1Edges);
+    console.log('VERTEX 2', vertex2);
     for (let i = 0; i < vertex1Edges.length; i++) {
-      if (vertex1Edges[i][0] === vertex2.value) {
-        console.log('VERTEX 1 WEIGHT', vertex1Edges[i][1]);
-        return vertex1Edges[i][1];
+      console.log('VERTEX EDGE', vertex1Edges[1][0]);
+      if (vertex1Edges[i][0] === vertex2) {
+        console.log('VERTEX 1 WEIGHT', vertex1, vertex1Edges[i][1]);
+        let weight = vertex1Edges[i][1];
+        console.log('WEIGHT', weight, vertex2);
+        return weight;
       }
     }
   }
@@ -65,22 +70,19 @@ class Graph {
 function businessTrip(graph, cityArr) {
   // set cost variable
   let cost = 0;
+  console.log('City ARR', cityArr);
   // checked edges
-  let edgesChecked = [];
   // loop through city array
   if (cityArr.length > 1) {
     for (let i = 0; i < cityArr.length - 1; i++) {
-      console.log('CURRENT LOCATION', cityArr[i]);
-      console.log('NEXT LOCATION', cityArr[i + 1]);
-      console.log('EDGES CHECKED', edgesChecked);
-      console.log('COST', cost);
-      // check to see if current trip is in edgesChecked, if not, check edge
-      if (!edgesChecked.includes(`${cityArr[i]}:${cityArr[i + 1]}`)) {
-        let edgeWt = graph.getEdgeWeight(cityArr[i], cityArr[i + 1]);
-        // push edge to edgesChecked array
-        edgesChecked.push(`${cityArr[i]}:${cityArr[i + 1]}`);
-        cost += edgeWt;
-      }
+      console.log('cityArr[i]', cityArr[i]);
+      console.log('cityArr[i+1]', cityArr[i + 1]);
+      // if i+1 in neighbors, getweight, add to counter
+      let edgeWt = graph.getEdgeWeight(cityArr[i], cityArr[i + 1]);
+      // push edge to edgesChecked array
+      console.log('EDGE WT', edgeWt);
+      cost += edgeWt;
+      console.log('RUNNING COST', cost);
     }
   }
   return cost;
@@ -110,11 +112,11 @@ graph.addEdge('New Monstropolis', 'Naboo', 73);
 graph.addEdge('Naboo', 'Narnia', 250);
 
 // let cost = businessTrip(graph, cityArr);
-let cost2 = businessTrip(graph, ['Metroville', 'Pandora']);
-// let cost3 = businessTrip(graph, ['Arendelle', 'New Monstropolis', 'Naboo']);
+// let cost2 = businessTrip(graph, ['Metroville', 'Pandora']);
+let cost3 = businessTrip(graph, ['Arendelle', 'New Monstropolis', 'Naboo']);
 // console.log('COST', cost);
-console.log('COST2', cost2);
-// console.log('COST3', cost3);
+// console.log('COST2', cost2);
+console.log('COST3', cost3);
 
 
 module.exports = Graph;
