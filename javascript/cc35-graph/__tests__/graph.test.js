@@ -6,7 +6,7 @@ describe('Tests Graph class', () => {
 
   it('An empty graph properly returns null', () => {
     const graph = new Graph();
-    expect(graph.getVertecies()).toEqual(null);
+    expect(graph.getVertices()).toEqual(null);
   });
 
   it('Node can be successfully added to the graph', () => {
@@ -39,7 +39,7 @@ describe('Tests Graph class', () => {
     const graph = new Graph();
     let kiwi = graph.addVertex('kiwi');
     let banana = graph.addVertex('banana');
-    expect(graph.getVertecies()).toEqual([kiwi, banana]);
+    expect(graph.getVertices()).toEqual([kiwi, banana]);
   });
 
   it('An edge can be successfully added to the graph', () => {

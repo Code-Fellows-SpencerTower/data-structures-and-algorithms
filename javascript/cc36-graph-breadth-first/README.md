@@ -7,6 +7,10 @@
   - Return: A collection of nodes in the order they were visited.
   - Display the collection
 
+## Whiteboard
+
+![graph-breadth-first](graph-breadth-first.png)
+
 ## Approach & Efficiency
 
 ## Resources

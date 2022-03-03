@@ -47,7 +47,7 @@ class Graph {
     }
   }
 
-  getVertecies() {
+  getVertices() {
     return Array.from(this.adjacencyList.keys()).length >= 1 ? Array.from(this.adjacencyList.keys()) : null;
   }
 
@@ -69,7 +69,7 @@ let grape = graph.addVertex('grape');
 graph.addEdge(kiwi, apple);
 graph.addEdge(kiwi, banana, 30);
 graph.addEdge(kiwi, grape, 40);
-// console.log("GRAPH", graph.getVertecies());
+// console.log("GRAPH", graph.getVertices());
 // console.log('EDGE WEIGHT', graph.getEdgeWeight(kiwi, banana));
 // console.log('EDGE WEIGHT KIWI GRAPE', graph.getEdgeWeight(kiwi, grape));
 // console.log('EDGE WEIGHT KIWI APPLE', graph.getEdgeWeight(kiwi, apple));

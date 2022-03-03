@@ -42,7 +42,7 @@ class Graph {
     }
   }
 
-  getVertecies() {
+  getVertices() {
     return Array.from(this.adjacencyList.keys()).length >= 1 ? Array.from(this.adjacencyList.keys()) : null;
   }
 

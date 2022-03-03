@@ -34,7 +34,7 @@ class Graph {
     return this.adjacencyList[vertex];
   }
 
-  getVertecies() {
+  getVertices() {
     return Object.keys(this.adjacencyList);
   }
 }
@@ -47,6 +47,6 @@ let apple = graph.addVertex('apple');
 graph.addEdge(kiwi, apple);
 graph.addEdge(kiwi, banana);
 console.log('GRAPH SIZE', graph.size());
-console.log('GET VERTICIES', graph.getVertecies());
+console.log('GET VERTICIES', graph.getVertices());
 console.log('GET NEIGHBORS KIWI:', graph.getNeighbors(kiwi));
 console.log('GET NEIGHBORS APPLE:', graph.getNeighbors(apple));
